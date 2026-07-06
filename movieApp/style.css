@@ -106,3 +106,65 @@ main {
 .movie:hover .overview {
     transform: translateY(0);
 }
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0.5rem;
+    background-color: #373b69;
+    padding: .5rem;
+    border-radius: 100px;
+    box-shadow: inset 0 4px 5px rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+.box ul{
+    display: flex;
+    margin: 0 .5rem;
+    padding: 0;
+}
+.box ul li{
+    list-style: none;
+    margin: 0 10px;
+    padding: .5rem 1rem;
+    background-color: #22254b;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    transition: all .3s ease-in-out;
+
+    line-height: 1rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.box ul li:hover{
+    background-color: #fff;
+    color: #22254b;
+} 
+.box ul li.active{
+    background-color: #fff;
+    color: #22254b;
+}
+.hidden{
+    display:none;
+} 
+.box button{
+    background-color: #22254b;
+    font-weight: bold;
+    border: none;
+    color: #fff;
+    padding: .5rem 1rem;
+    margin: 0 .5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.box button:hover{
+    background-color: #fff;
+    color: #22254b;
+} 
