@@ -1,8 +1,13 @@
 
 const btn=document.getElementById('btn');
-const rgbValue=document.querySelector('.rgbValue');
-const hexValue=document.querySelector('.hexValue');
+const rgbValue = document.querySelector(".rgbValue");
+const hexValue = document.querySelector(".hexValue");
 const DEFAULT_COLOR= {r:241,g:245,b:24};
+const saveColor= (color)=> localStorage.setItem("color",JSON.stringify(color));
+
+const getColor = () => {
+    return JSON.parse(localStorage.getItem("color")) || DEFAULT_COLOR;
+};
 
 
 btn.addEventListener('click',()=>{
@@ -15,20 +20,28 @@ const newColor=()=>{
     return color;
 }
 
-function render(){
-    const color=getColor() || newColor();
-    const colorHex=rgbToHex(color.r,color.g,color.b);
-    document.body.style.backgroundColor=color;
-    rgbValue.innerHTML=`rgb(${color.r},${color.g},${color.b})`;
-    hexValue.innerHTML=colorHex;
-};
+function render() {
+    const color = getColor();
+
+    document.body.style.backgroundColor =
+        `rgb(${color.r}, ${color.g}, ${color.b})`;
+
+    if (rgbValue) {
+        rgbValue.textContent = `rgb(${color.r}, ${color.g}, ${color.b})`;
+    }
+
+    if (hexValue) {
+        hexValue.textContent = rgbToHex(color.r, color.g, color.b);
+    }
+}
 render();
 
-function getRandomColorRGB(){
-   const r=Math.floor(Math.random() * 256);
-   const g=Math.floor(Math.random() * 256);
-   const b=Math.floor(Math.random() * 256);
-   return `rgb(${r}, ${g}, ${b})`;
+function getRandomColorRGB() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    return { r, g, b };
 }
 
 function rgbToHex(r, g, b) {
@@ -38,10 +51,4 @@ function rgbToHex(r, g, b) {
         .toUpperCase()
     );
 }
-
-
-
-const saveColor= (color)=> localStorage.setItem("color",JSON.stringify(color));
-
-const getColor = ()=> {return JSON.parse(localStorage.getItem("color")) || DEFAULT_COLOR };
 
