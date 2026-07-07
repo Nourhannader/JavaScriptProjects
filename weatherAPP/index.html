@@ -1,21 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Weather App</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <form id="form">
-            <input
-                type="text"
-                id="search"
-                placeholder="Search by location"
-                autocomplete="off"
-            />
-        </form>
-        <main id="main"></main>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weatherio</title>
+    <meta name="title" content="weatherio">
+    <meta name="keywords" content="weather, weather app, weather application, real-time weather, weather information, weather forecast">
+    <meta name="description" content="weatherio is a weather application that provides real-time weather information for any location.">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/svg+xml" href="./favicon.svg">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- custom js -->
+     <script src="./assets/js/app.js" type="module" ></script>
+     <script src="./assets/js/route.js" type="module" ></script>
+</head>
+<body>
+    
+
+    <!-- header -->
+     <header class="header">
+         <div class="container">
+             <a href="#" class="logo">
+                <img src="./assets/images/logo.png" width="364" height="58" alt="logo">
+             </a>
+
+             <div class="seacher-view"  data-search-view>
+                <div class="search-wrapper">
+                    <input type="search" name="search"  placeholder="Search city ..."
+                      autocomplete="off" class="search-field" data-search-field>
+
+                      <span class="m-icon">search</span>
+
+                       <button class="icon-btn loading-icon has-state">
+                        <span class="m-icon">arrow_back</span>
+                       </button>
+                </div>
+                <div class="search-result" data-search-result>
+                    <ul class="view-list" data-search-list>
+                        <li class="view-item">
+                            <span class="m-icon">location_on</span>
+                            <div>
+                                <p class="item-title">London</p>
+                                <p class="label-2 item-subtitle">State of London, GB</p>
+                            </div>
+
+                            <a href="#" class="item-link has-state" data-search-toggler></a>
+                            
+                        </li>
+                    </ul>
+
+                </div>
+               
+             </div>
+
+             <div class="header-actions">
+                <button class="icon-btn has-state" aria-label="open search"
+                data-search-toggler>
+                  <span class="m-icon icon">Search</span>
+                </button>
+
+                <a href="#/current-location" class="btn-primary has-state"
+                data-current-location-btn>
+                 <span class="m-icon">my_location</span>
+                 <span class="span">Current Location</span>
+                 </a>
+             </div>
+         </div>
+     </header>
+</body>
 </html>
