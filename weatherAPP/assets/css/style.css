@@ -99,6 +99,7 @@ body::before{
 .weather-info{
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 .location-date-container{
   display: flex;
